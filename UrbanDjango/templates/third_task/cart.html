@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "menu.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title1 }}</title>
+    <style media="screen">
+      fieldset {
+        padding: 5px;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-right: 500px;
+        width: 250px;
+      }
+      fieldset.Call {
+        padding: 5px;
+        border: 2px dotted black;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body>
+    <h1>{{ title2 }}</h1>
+    <p>...но можем предложить вам заполнить небольшую анкету <br>
+        <i>(данные всё равно не сохранятся, мы просто выпендриваемся)</i></p>
+    <fieldset>
+      <legend>Анкета</legend>
+      <div>
+        <form class="Анкета" action="http://example.com/login" method="post">
+          <p>Фамилия <input type="text" name="familion" placeholder="Last name"></p>
+          <p>Имя <input type="text" name="name" placeholder="First name"></p>
+          <p>Email <input type="email" name='Email' placeholder="example@domain.com"></p>
+          <p>Телефон <input type="text" name="number_phone" placeholder="Eg. +44750000000000"></p>
+          <p>Дата рождения <input type="date" name="selectdate" value=""></p>
+          <fieldset class="Call">
+            <legend>Как с вами связаться </legend>
+            <form class="" action="index.html" method="post">
+              <p>1.<input type="radio" name="one"> Email</p>
+              <p>2.<input type="radio" name="one"> Телефон</p>
+            </form>
+          </fieldset>
+          <p>Какую температуру воздуха предпочитаете?
+            -10C<input type="range" name="range" min="-10" max="50">50C</p>
+          <p>Ваш любимый цвет <input type="color" name="selectcolor"></p>
+          <p>Ваш любимый сайт <input list="info">
+            <datalist id="info">
+              <option value="https://www.youtube.com/"></option>
+              <option value="https://ru.wikipedia.org/"></option>
+              <option value="https://rutube.ru"></option>
+              <option value="https://www.avito.ru/"></option>
+            </datalist>
+          </p>
+          <input type="submit" value="Сохранить">
+        </form>
+      </div>
+    </fieldset>
+    <br>
+    <button onclick="location.href='http://127.0.0.1:8000/platform/'">{{ button }}</button>
+</body>
+</html>
